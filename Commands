@@ -27,7 +27,7 @@ public class Commands
       System.out.println("amnesia.");
       clearScreen(2);
     }
-    else if (command.next().equals(kill))
+    else if (command.next().equals("kill"))
     {
       System.out.println("You don't feel like killing today.");
       clearScreen(1);
