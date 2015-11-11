@@ -1,32 +1,33 @@
 public class Commands
 {
-  public static void clear(int l)
+  public static void clearScreen(int l)
   {
-    for (int i = 0; i < 30 - l; i++)
+    for (int i = 0; i < 20 - l; i++)
     {
       System.out.println(" ");
     }
   }
-  public void basic(String s)
+  public static void basicCommands(String command)
   {
-    if (s == "help")
+    if (command.equals("help"))
     {
-      System.out.println("Type LOOK to examine your surroundings. Type LOOK -item- to examine a specific item.");
-      System.out.println("Type USE -item- to use an item that you have aquired. Type GET -item- to attempt to");
-      System.out.println("get the item. Type TALK -person- to attempt conversation. Type GO -direction- to");
-      System.out.println("relocate yourself.");
+      System.out.println("Type LOOK to examine your surroundings. Type LOOK -item- to examine");
+      System.out.println("a specific item. Type USE -item- to use an item that you have aquired.");
+      System.out.println("Type GET -item- to attempt to get the item. Type TALK -person- to");
+      System.out.println("attempt conversation. Type GO -direction- to relocate yourself.");
       clear(4);
     }
-    else if (s == "look self")
+    else if (command.equals("look self"))
     {
       System.out.println("You are a stout man of about 35. You are suffering from chronic undiagnosed amnesia.");
       clear(1);
     }
     
   }
-    public static void main(String args[])
-    {
-      Scanner kb = new Scanner(System.in);
-      String s = kb.next();
-      basic(s);
-    }
+  public static void main(String args[])
+  {
+    Scanner kb = new Scanner(System.in);
+    String command = kb.next();
+    basic(command);
+  }
+}
