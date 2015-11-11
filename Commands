@@ -22,6 +22,8 @@ public class Commands
       System.out.println("You are a stout man of about 35. You are suffering from chronic undiagnosed amnesia.");
       clear(1);
     }
+    
+  }
     public static void main(String args[])
     {
       Scanner kb = new Scanner(System.in);
