@@ -11,6 +11,7 @@ public class Commands
   }
   public static void basicCommands(String command)
   {
+    Scanner first = command;
     if (command.equals("help"))
     {
       System.out.println("Type LOOK to examine your surroundings.");
@@ -27,7 +28,7 @@ public class Commands
       System.out.println("amnesia.");
       clearScreen(2);
     }
-    else if (command.next().equals("kill"))
+    else if (first.next().equals("kill"))
     {
       System.out.println("You don't feel like killing today.");
       clearScreen(1);
