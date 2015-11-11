@@ -1,0 +1,30 @@
+import java.util.Scanner;
+  public class TextAdv
+  {
+    public static void main (String args[])
+    {
+      system.out.println("You are stuck on the top floor of a Dungeon and you need to escape without dying. Type help for a list of commands");
+      System.out.println("If you would like to begin, type 1. If not enter 0")
+      int play = kb.nextInt()
+      
+      if (play = 0)
+      {
+        system.exit(1);
+      }
+      else
+      {
+        system.out.println("You are in Room 1. There is nothing in this room. There is a open door on the west wall.);
+        Commands Go = new Go(i); 
+        system.out.println("You have entered Room 2. There is a chest agaisnt the north wall in the corner, a closed door on the west wall, and an open door on the south wall.");
+        Command Go = new Go() 
+        if (Go = 1)
+          {
+            system.out.println("Would you like to look at the chest?");
+            Command Look = new Look()
+            if (have != 0) //0 is a place holder. player need key
+            {
+              system.out.println("Chest is locked. you cannot open it without the key");
+            }
+            system.out.println("You have opened the chest. Inside is a sword and a key"); 
+            Command take = new take()
+            
