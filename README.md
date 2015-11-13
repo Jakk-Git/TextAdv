@@ -1,2 +1,2 @@
 # TextAdv
-For CIS
+This is a textual adventure.
