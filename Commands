@@ -30,9 +30,11 @@ public class Commands
     else if (command.equals("die"))
     {
       System.out.print("Maybe later.");
+      clearScreen(1);
     }
-    
   }
+  public Int Room1(String command)
+  {
   public static void main(String args[])
   {
     Scanner kb = new Scanner(System.in);
