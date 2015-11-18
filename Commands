@@ -19,7 +19,8 @@ public class Commands
       System.out.println("Type GET -item- to attempt to get the item.");
       System.out.println("Type TALK -person- to attempt conversation.");
       System.out.println("Type GO -direction- to relocate yourself.");
-      clearScreen(6);
+      System.out.println("Type EXIT to quit the game.");
+      clearScreen(7);
     }
     else if (command.equals("look self"))
     {
@@ -31,6 +32,10 @@ public class Commands
     {
       System.out.print("Maybe later.");
       clearScreen(1);
+    }
+    else if (command.equals("exit"))
+    {
+      System.exit(1);
     }
   }
   public Int Room1(String command)
@@ -52,6 +57,37 @@ public class Commands
       return 2;
     }
   }
+  public Int Room2(String command)
+  {
+  //MAKE DIFFERENT RESPONSES FOR IF THE CHEST/DOOR IS LOCKED OR NOT.
+  //MAKE RESPONSES FOR GOING IN DIRECTIONS THAT DON'T HAVE DOORS.
+  //MAKE A RESPONSE FOR OPENING THE RED DOOR.
+  //MAKE RESPONSES FOR GOING IN THE DIRECTIONS WITH OPEN DOORS.
+  //that should be it for now I guess maybe
+    if (command.equals("look"))
+    {
+      System.out.println("There is a green chest against the north wall in the corner,");
+      System.out.println("a closed red door on the west wall, and open doors on the south and east walls.");
+      clearScreen(2);
+      return 1;
+    }
+    else if (command.equals("look chest"))
+    {
+      System.out.println("The green chest is locked, you cannot open it without a key.");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("look red door"))
+    {
+      System.out.println("This door is red. This door is 
+    else if (command.equals("open chest" || "use greenkey" || "use green key"))
+    {
+      return 2;
+    }
+    else if (command.equals("go west"))
+    {
+      return 3;
+    }
   public static void main(String args[])
   {
     Scanner kb = new Scanner(System.in);
