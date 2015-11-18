@@ -15,7 +15,7 @@ public class Commands
     {
       System.out.println("Type LOOK to examine your surroundings.");
       System.out.println("Type LOOK -item- to examine a specific item.");
-      System.out.println("Type USE -item- to use an item that you have aquired.");
+      System.out.println("Type USE -item- to use any item that you are able to use.");
       System.out.println("Type GET -item- to attempt to get the item.");
       System.out.println("Type TALK -person- to attempt conversation.");
       System.out.println("Type GO -direction- to relocate yourself.");
@@ -35,15 +35,22 @@ public class Commands
   }
   public Int Room1(String command)
   {
-    if (command.equals("dumpleton grumpleton fumpleton doo"))
+    if (command.equals("look"))
     {
-      System.out.println("what.");
+      System.out.println("There is NOTHING in this room. There is an open DOOR on the west wall.");
+      clearScreen(1);
+      return 0;
     }
-    else if (command.equals("pampledok jampledok rankledok dee"))
+    else if (command.equals("look door"))
     {
-      System.out.println("seriously what");
+      System.out.println("A standard door. It is wide open.");
+      clearScreen(1);
+      return 0;
     }
-    else if (command == 
+    else if (command.equals("go west"))
+    {
+      return 1;
+    }
   }
   public static void main(String args[])
   {
