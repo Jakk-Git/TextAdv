@@ -35,6 +35,15 @@ public class Commands
   }
   public Int Room1(String command)
   {
+    if (command.equals("dumpleton grumpleton fumpleton doo"))
+    {
+      System.out.println("what.");
+    }
+    else if (command.equals("pampledok jampledok rankledok dee"))
+    {
+      System.out.println("seriously what");
+    }
+    else if (command == 
   }
   public static void main(String args[])
   {
