@@ -3,8 +3,11 @@ import java.util.Scanner;
   {
     public static void main (String args[])
     {
-      system.out.println("You are stuck on the top floor of a Dungeon and you need to escape without dying. Type help for a list of commands");
+      Scanner kb = new Scanner(System.in);
+      System.out.println("You are stuck on the top floor of a Dungeon and you need to escape without dying.");
+      System.out.println("Type HELP for a list of commands.")
       System.out.println("If you would like to begin, type 1. If not enter 0")
+      clearScreen(3);
       int play = kb.nextInt()
       
       if (play = 0)
@@ -13,18 +16,86 @@ import java.util.Scanner;
       }
       else
       {
-        system.out.println("You are in Room 1. There is nothing in this room. There is a open door on the west wall.);
-        Commands Go = new Go(i); 
-        system.out.println("You have entered Room 2. There is a chest agaisnt the north wall in the corner, a closed door on the west wall, and an open door on the south wall.");
-        Command Go = new Go() 
-        if (Go = 1)
+        boolean win = false;
+        int room = 1;
+        int action[] = new int[16];
+        for (int i = 0; i < 16; i++)
+        {
+          action[i] = 0;
+        }
+        boolean greenkey = false;
+        boolean redkey = false;
+        boolean sword = false;
+        boolean reddooropen = false;
+        
+        while (win == false)
+        {
+          while (room == 1)
           {
-            system.out.println("Would you like to look at the chest?");
-            Command Look = new Look()
-            if (have != 0) //0 is a place holder. player need key
+            if (action[1] == 0)
             {
-              system.out.println("Chest is locked. you cannot open it without the key");
+              System.out.println("You are in Room 1. There is NOTHING in this room.");
+              System.out.println("There is an open DOOR on the west wall.");
+              clearScreen(2);
             }
-            system.out.println("You have opened the chest. Inside is a sword and a key"); 
-            Command take = new take()
+            command = kb.nextline();
+            basicCommands(command);
+            action[1] = Room1(command);
+            if (action[1] == 2)
+            {
+              room = 2;
+            }
+            else if (action[1] == 0)
+            {
+              System.out.print("I cannot recognise that command.");
+              action[1] = 1;
+            }
+          }
+          while (room == 2)
+          {
+            if (action[2] == 0)
+            {
+              System.out.println("You have entered Room 2. There is a green chest against the north wall in the corner,");
+              System.out.println("a closed door on the west wall, and an open door on the south wall.");
+              clearScreen(2)
+            }
+            command = kb.nextline();
+            basicCommands(command);
+            action[2] = Room2(command);
+            if (action[2] == 2)
+            {
+              if (redkey = true)
+              {
+                System.out.println("You have opened the chest! Inside is a sword and a red key.");
+                System.out.println("You have obtained a SWORD and a GREEN KEY");
+                sword = true;
+                greenkey = true;
+                clearScreen(2);
+              }
+              else
+              {
+                System.out.println("You don't have the correct key!");
+                clearScreen(1);
+              }
+            }
+            else if (action[2] == 3)
+            {
+              if (reddooropen == true)
+              {
+                room = 3;
+              }
+              else
+              {
+                System.out.println("That door is closed!");
+                clearScreen(1);
+              }
+            }
+            else if (action[2] == 0)
+            {
+              System.out.print("I cannot recognise that command.");
+              clearScreen(1);
+              action[2] = 1;
+            }
+          }
+        
             
