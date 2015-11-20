@@ -56,14 +56,15 @@ public class Commands
     {
       return 2;
     }
+    else if (command.equals("go east" || "go north" || "go south"))
+    {
+      System.out.println("You cannot go in that direction!");
+      clearScreen(1);
+      return 1;
+    }
   }
   public Int Room2(String command)
   {
-  //MAKE DIFFERENT RESPONSES FOR IF THE CHEST/DOOR IS LOCKED OR NOT.
-  //MAKE RESPONSES FOR GOING IN DIRECTIONS THAT DON'T HAVE DOORS.
-  //MAKE A RESPONSE FOR OPENING THE RED DOOR.
-  //MAKE RESPONSES FOR GOING IN THE DIRECTIONS WITH OPEN DOORS.
-  //that should be it for now I guess maybe
     if (command.equals("look"))
     {
       System.out.println("There is a green chest against the north wall in the corner,");
@@ -73,20 +74,41 @@ public class Commands
     }
     else if (command.equals("look chest"))
     {
-      System.out.println("The green chest is locked, you cannot open it without a key.");
+      System.out.println("This chest is green. It has a green lock.");
       clearScreen(1);
       return 1;
     }
     else if (command.equals("look red door"))
     {
-      System.out.println("This door is red. This door is 
+      System.out.println("This door is red. It has a red lock.");
+      clearScreen(1);
+      return 1;
+    }
     else if (command.equals("open chest" || "use greenkey" || "use green key"))
     {
       return 2;
     }
-    else if (command.equals("go west"))
+    else if (command.equals("open door" || "use redkey" || "use red key"))
     {
       return 3;
+    }
+    else if (command.equals("go west"))
+    {
+      return 4;
+    }
+    else if (command.equals("go east"))
+    {
+      return 5;
+    }
+    else if (command.equals("go south"))
+    {
+      return 6;
+    }
+    else if (command.equals("go north"))
+    {
+      System.out.println("You cannot go in that direction!");
+      clearScreen(1);
+      return 1;
     }
   public static void main(String args[])
   {
