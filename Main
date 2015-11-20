@@ -10,12 +10,13 @@ public class TextAdv
     clearScreen(3);
     int play = kb.nextInt();
     
-    if (play = 0)
+    if (play == 0)
     {
-      system.exit(1);
+      System.exit(1);
     }
     else
     {
+      String command;
       boolean win = false;
       int room = 1;
       int action[] = new int[16];
