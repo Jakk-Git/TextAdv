@@ -62,6 +62,10 @@ public class Commands
       clearScreen(1);
       return 1;
     }
+    else
+    {
+      return 0;
+    }
   }
   public int Room2(String command)
   {
@@ -109,6 +113,10 @@ public class Commands
       System.out.println("You cannot go in that direction!");
       clearScreen(1);
       return 1;
+    }
+    else
+    {
+      return 0;
     }
   }
 }
