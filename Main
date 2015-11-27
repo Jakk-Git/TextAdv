@@ -40,7 +40,7 @@ public class Main
             Commands.clearScreen(2);
           }
           action[1] = 0;
-          command = kb.nextline();
+          command = kb.nextLine();
           Commands.basicCommands(command);
           action[1] = Commands.Room1(command);
           if (action[1] == 2)
@@ -63,7 +63,7 @@ public class Main
             Commands.clearScreen(2);
           }
           action[2] = 0;
-          command = kb.nextline();
+          command = kb.nextLine();
           Commands.basicCommands(command);
           action[2] = Commands.Room2(command);
           if (action[2] == 2)
