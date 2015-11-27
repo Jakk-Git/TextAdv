@@ -7,7 +7,7 @@ public class TextAdv
     System.out.println("You are stuck on the top floor of a Dungeon and you need to escape without dying.");
     System.out.println("Type HELP for a list of commands.");
     System.out.println("If you would like to begin, type 1. If not enter 0");
-    clearScreen(3);
+    Commands.clearScreen(3);
     int play = kb.nextInt();
     
     if (play == 0)
@@ -37,12 +37,12 @@ public class TextAdv
           {
             System.out.println("You are in Room 1. There is NOTHING in this room.");
             System.out.println("There is an open DOOR on the west wall.");
-            clearScreen(2);
+            Commands.clearScreen(2);
           }
           action[1] = 0;
           command = kb.nextline();
-          basicCommands(command);
-          action[1] = Room1(command);
+          Commands.basicCommands(command);
+          action[1] = Commands.Room1(command);
           if (action[1] == 2)
           {
             room = 2;
@@ -60,12 +60,12 @@ public class TextAdv
           {
             System.out.println("You have entered Room 2. There is a green chest against the north wall in the corner,");
             System.out.println("a closed door on the west wall, and an open door on the south wall.");
-            clearScreen(2);
+            Commands.clearScreen(2);
           }
           action[2] = 0;
           command = kb.nextline();
-          basicCommands(command);
-          action[2] = Room2(command);
+          Commands.basicCommands(command);
+          action[2] = Commands.Room2(command);
           if (action[2] == 2)
           {
             if (redkey = true)
@@ -74,12 +74,12 @@ public class TextAdv
               System.out.println("You have obtained a SWORD and a GREEN KEY");
               sword = true;
               greenkey = true;
-              clearScreen(2);
+              Commands.clearScreen(2);
             }
             else
             {
               System.out.println("You don't have the correct key!");
-              clearScreen(1);
+              Commands.clearScreen(1);
             }
           }
           else if (action[2] == 3)
@@ -88,7 +88,7 @@ public class TextAdv
             {
               reddooropen = true;
               System.out.println("You have opened the door!");
-              clearScreen(1);
+              Commands.clearScreen(1);
             }
             else
             {
@@ -104,7 +104,7 @@ public class TextAdv
             else
             {
               System.out.println("That door is locked!");
-              clearScreen(1);
+              Commands.clearScreen(1);
             }
           }
           else if (action[2] == 5)
@@ -118,7 +118,7 @@ public class TextAdv
           else if (action[2] == 0)
           {
             System.out.print("I cannot recognise that command.");
-            clearScreen(1);
+            Commands.clearScreen(1);
             action[2] = 1;
           }
         }
