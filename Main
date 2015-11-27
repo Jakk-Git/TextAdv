@@ -4,10 +4,11 @@ public class Main
   public static void main (String args[])
   {
     Scanner kb = new Scanner(System.in);
-    System.out.println("You are stuck on the top floor of a Dungeon and you need to escape without dying.");
+    System.out.println("You are stuck on the top floor of a Dungeon and you need to escape without");
+    System.out.println("dying.");
     System.out.println("Type HELP for a list of commands.");
-    System.out.println("If you would like to begin, type 1. If not enter 0");
-    Commands.clearScreen(3);
+    System.out.println("If you would like to begin, type 1. If not enter 0.");
+    Commands.clearScreen(4);
     int play = kb.nextInt();
     
     if (play == 0)
