@@ -38,7 +38,7 @@ public class Commands
       System.exit(1);
     }
   }
-  public int Room1(String command)
+  public static int Room1(String command)
   {
     if (command.equals("look"))
     {
@@ -67,7 +67,7 @@ public class Commands
       return 0;
     }
   }
-  public int Room2(String command)
+  public static int Room2(String command)
   {
     if (command.equals("look"))
     {
