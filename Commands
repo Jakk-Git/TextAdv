@@ -25,8 +25,8 @@ public class Commands
     }
     else if (command.equals("look self"))
     {
-      System.out.println("You are a stout man of about 35. You are currently suffering from chronic undiagnosed");
-      System.out.println("amnesia.");
+      System.out.println("You are a stout man of about 35. You are currently suffering");
+      System.out.println("from chronic undiagnosed amnesia.");
       clearScreen(2);
       return true;
     }
