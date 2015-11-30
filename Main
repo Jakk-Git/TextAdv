@@ -59,9 +59,10 @@ public class Main
         {
           if (action[2] == 0)
           {
-            System.out.println("You have entered Room 2. There is a green chest against the north wall in the corner,");
+            System.out.println("You have entered Room 2.");
+            System.out.println("There is a green chest against the north wall in the corner,");
             System.out.println("a closed door on the west wall, and an open door on the south wall.");
-            Commands.clearScreen(2);
+            Commands.clearScreen(3);
           }
           action[2] = 0;
           command = kb.nextLine();
@@ -69,9 +70,9 @@ public class Main
           action[2] = Commands.Room2(command);
           if (action[2] == 2)
           {
-            if (redkey = true)
+            if (redkey == true)
             {
-              System.out.println("You have opened the chest! Inside is a sword and a red key.");
+              System.out.println("You have opened the chest! Inside is a sword and a green key.");
               System.out.println("You have obtained a SWORD and a GREEN KEY");
               sword = true;
               greenkey = true;
