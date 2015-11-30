@@ -25,6 +25,7 @@ public class Main
       {
         action[i] = 0;
       }
+      boolean bcommand = false;
       boolean greenkey = false;
       boolean redkey = false;
       boolean sword = false;
@@ -42,13 +43,14 @@ public class Main
           }
           action[1] = 0;
           command = kb.nextLine();
-          Commands.basicCommands(command);
+          bcommand = false;
+          bcommand = Commands.basicCommands(command);
           action[1] = Commands.Room1(command);
           if (action[1] == 2)
           {
             room = 2;
           }
-          else if (action[1] == 0)
+          else if (action[1] == 0 && bcommand == false)
           {
             System.out.print("I cannot recognise that command.");
             action[1] = 1;
@@ -66,7 +68,8 @@ public class Main
           }
           action[2] = 0;
           command = kb.nextLine();
-          Commands.basicCommands(command);
+          bcommand = false;
+          bcommand = Commands.basicCommands(command);
           action[2] = Commands.Room2(command);
           if (action[2] == 2)
           {
@@ -117,7 +120,7 @@ public class Main
           {
             room = 3;
           }
-          else if (action[2] == 0)
+          else if (action[2] == 0 && bcommand == false)
           {
             System.out.print("I cannot recognise that command.");
             action[2] = 1;
