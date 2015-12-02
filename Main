@@ -103,6 +103,7 @@ public class Main
             else
             {
               System.out.println("You don't have the correct key!");
+              Commands.clearScreen(1);
             }
           }
           else if (action[2] == 4)
