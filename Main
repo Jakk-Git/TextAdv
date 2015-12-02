@@ -52,9 +52,9 @@ public class Main
           else if (action[1] == 0 && start == false)
           {
             System.out.print("I cannot recognise that command.");
-            start = false;
             action[1] = 1;
           }
+          start = false;
         }
         action[1] = 0;
         while (room == 2)
@@ -121,10 +121,10 @@ public class Main
           }
           else if (action[2] == 0 && start == false)
           {
-            start = false;
             System.out.print("I cannot recognise that command.");
             action[2] = 1;
           }
+          start = false;
         }
         action[2] = 0;
       }
