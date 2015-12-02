@@ -40,6 +40,10 @@ public class Commands
     {
       System.exit(1);
     }
+    else
+    {
+      return 0;
+    }
   }
   public static int Room1(String command)
   {
