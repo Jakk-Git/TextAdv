@@ -54,6 +54,12 @@ public class Commands
       clearScreen(1);
       return 1;
     }
+    else if (command.equals("get nothing"))
+    {
+      System.out.println("You have aquired nothing.");
+      clearScreen(1);
+      return 1;
+    }
     else if (command.equals("look door"))
     {
       System.out.println("A standard door. It is wide open.");
@@ -79,28 +85,28 @@ public class Commands
   {
     if (command.equals("look"))
     {
-      System.out.println("There is a green chest against the north wall in the corner,");
-      System.out.println("a closed red door on the west wall, and open doors on the south and east walls.");
+      System.out.println("There is a red chest against the north wall in the corner,");
+      System.out.println("a closed green door on the west wall, and open doors on the south and east walls.");
       clearScreen(2);
       return 1;
     }
     else if (command.equals("look chest"))
     {
-      System.out.println("This chest is green. It has a green lock.");
+      System.out.println("This chest is red. It has a red lock.");
       clearScreen(1);
       return 1;
     }
     else if (command.equals("look red door"))
     {
-      System.out.println("This door is red. It has a red lock.");
+      System.out.println("This door is green. It has a green lock.");
       clearScreen(1);
       return 1;
     }
-    else if (command.equals("open chest") || command.equals("use greenkey") || command.equals("use green key"))
+    else if (command.equals("open chest") || command.equals("use redkey") || command.equals("use red key"))
     {
       return 2;
     }
-    else if (command.equals("open door") || command.equals("use redkey") || command.equals("use red key"))
+    else if (command.equals("open door") || command.equals("use greenkey") || command.equals("use green key"))
     {
       return 3;
     }
@@ -121,6 +127,52 @@ public class Commands
       System.out.println("You cannot go in that direction!");
       clearScreen(1);
       return 1;
+    }
+    else
+    {
+      return 0;
+    }
+  }
+  public static int Room3(String command)
+  {
+    if (command.equals("look"))
+    {
+      System.out.println("There is a MAN in strange looking garn standing in the corner");
+      System.out.println("There is a FLASK on a nearby shelf, and an open door to the north.");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("look man"))
+    {
+      System.out.println("Despite your amnesia, it is clear to you that this man is a wizard.");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("look flask"))
+    {
+      System.out.println("Tis' quite a flask.");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("get flask"))
+    {
+      System.out.println("You cannot get ye flask.");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("talk man"));
+    {
+      return 2;
+    }
+    else if (command.equals("go south") || command.equals("go west") || command.equals("go east"))
+    {
+      System.out.println("You cannot go in that direction!");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("go north"))
+    {
+      return 3;
     }
     else
     {
