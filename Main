@@ -26,18 +26,20 @@ public class Main
         action[i] = 0;
       }
       boolean start = true;
+      boolean wiztalk = false;
       boolean greenkey = false;
       boolean redkey = false;
       boolean sword = false;
-      boolean reddooropen = false;
+      boolean greendooropen = false;
       
       while (win == false)
       {
+        //ROOM 1
         while (room == 1)
         {
           if (action[1] == 0)
           {
-            System.out.println("You are in Room 1. There is NOTHING in this room.");
+            System.out.println("You have entered Room 1. There is NOTHING in this room.");
             System.out.println("There is an open DOOR on the west wall.");
             Commands.clearScreen(2);
           }
@@ -56,18 +58,21 @@ public class Main
           {
             System.out.print("I cannot recognise that command.");
             action[1] = 1;
+            Commands.clearScreen(1);
           }
           start = false;
         }
         action[1] = 0;
+        //ROOM 2
         while (room == 2)
         {
           if (action[2] == 0)
           {
             System.out.println("You have entered Room 2.");
-            System.out.println("There is a green chest against the north wall in the corner,");
-            System.out.println("a closed door on the west wall, and an open door on the south wall.");
-            Commands.clearScreen(3);
+            System.out.println("There is a red chest against the north wall in the corner,");
+            System.out.println("a closed door on the west wall, and open doors on the south");
+            System.out.println("and east walls.");
+            Commands.clearScreen(4);
           }
           action[2] = 0;
           command = kb.nextLine();
@@ -94,9 +99,9 @@ public class Main
           }
           else if (action[2] == 3)
           {
-            if (redkey == true)
+            if (greenkey == true)
             {
-              reddooropen = true;
+              greendooropen = true;
               System.out.println("You have opened the door!");
               Commands.clearScreen(1);
             }
@@ -108,7 +113,7 @@ public class Main
           }
           else if (action[2] == 4)
           {
-            if (reddooropen == true)
+            if (greendooropen == true)
             {
               room = 4;
             }
@@ -130,15 +135,17 @@ public class Main
           {
             System.out.print("I cannot recognise that command.");
             action[2] = 1;
+            Commands.clearScreen(1);
           }
           start = false;
         }
         action[2] = 0;
+        //ROOM 3
         while (room == 3)
         {
           if (action[3] == 0)
           {
-            System.out.println("You are in Room 3. You see a MAN in odd looking garb standing");
+            System.out.println("You have entered Room 3. You see a MAN in odd looking garb standing");
             System.out.println("in the corner. There is a FLASK on a nearby shelf.");
             Commands.clearScreen(2);
           }
@@ -147,11 +154,50 @@ public class Main
           action[3] = Commands.basicCommands(command);
           if (action[3] == 0)
           {
-            action[3] = Commands.Room1(command);
+            action[3] = Commands.Room3(command);
           }
           if (action[3] == 2)
           {
-            
+            if (wiztalk == false)
+            {
+              System.out.println("The man looks at you with a condescending gaze.");
+              System.out.println("He offers you a key he found lying around somewhere in");
+              System.out.println("exchange for allowing him to cast a spell on you.");
+              System.out.println("Do you say YES or NO?");
+              Commands.clearScreen(4);
+              command = kb.nextLine();
+              if (command.equals("yes"))
+              {
+                System.out.println("The man smiles and commends you on your choice.");
+                System.out.println("He then raises his hands and starts mumbling incomprehensible");
+                System.out.println("gibberish. Light starts to emit from his palms. You feel a");
+                System.out.println("cold feeling wash over you. After about a minute, the man lowers");
+                System.out.println("his hands and thanks you for your time. He reaches into his");
+                System.out.println("and hands you a RED KEY.");
+                Commands.clearScreen(6);
+                wiztalk = true;
+                redkey = true;
+              }
+              else if (command.equals("no"))
+              {
+                System.out.println("The man looks dissapointed. 'Too bad' he mutters.");
+                System.out.println("He raises his hand and the door shuts behind you.");
+                System.out.println("'That really is too bad.'");
+                System.out.println("You die in the most horrible way imaginable. GAME OVER.");
+                Commands.clearScreen(4);
+                System.exit(1);
+              }
+            }
+            else
+            {
+              System.out.println("The man refuses to speak to you any more.");
+              Commands.clearScreen(4);
+            }
+          }
+          else if (action[3] == 3)
+          {
+            room = 2;
+          }
           else if (action[1] == 0 && start == false)
           {
             System.out.print("I cannot recognise that command.");
