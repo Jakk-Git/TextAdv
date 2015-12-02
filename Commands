@@ -9,7 +9,7 @@ public class Commands
       System.out.println(" ");
     }
   }
-  public static void basicCommands(String command)
+  public static boolean basicCommands(String command)
   {
     if (command.equals("help"))
     {
@@ -42,7 +42,7 @@ public class Commands
     }
     else
     {
-      return 0;
+      return false;
     }
   }
   public static int Room1(String command)
