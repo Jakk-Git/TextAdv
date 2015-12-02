@@ -63,6 +63,7 @@ public class Main
           start = false;
         }
         action[1] = 0;
+        start = true;
         //ROOM 2
         while (room == 2)
         {
@@ -140,6 +141,7 @@ public class Main
           start = false;
         }
         action[2] = 0;
+        start = true;
         //ROOM 3
         while (room == 3)
         {
