@@ -9,7 +9,7 @@ public class Commands
       System.out.println(" ");
     }
   }
-  public static void basicCommands(String command)
+  public static int basicCommands(String command)
   {
     if (command.equals("help"))
     {
@@ -21,21 +21,28 @@ public class Commands
       System.out.println("Type GO -direction- to relocate yourself.");
       System.out.println("Type EXIT to quit the game.");
       clearScreen(7);
+      return 1;
     }
     else if (command.equals("look self"))
     {
       System.out.println("You are a stout man of about 35. You are currently suffering");
       System.out.println("from chronic undiagnosed amnesia.");
       clearScreen(2);
+      return 1;
     }
     else if (command.equals("die"))
     {
       System.out.print("Maybe later.");
       clearScreen(1);
+      return 1;
     }
     else if (command.equals("exit"))
     {
       System.exit(1);
+    }
+    else
+    {
+      return 0;
     }
   }
   public static int Room1(String command)
