@@ -39,6 +39,7 @@ public class Commands
     else if (command.equals("exit"))
     {
       System.exit(1);
+      return 0;
     }
     else
     {
