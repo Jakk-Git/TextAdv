@@ -45,6 +45,7 @@ public class Main
           }
           action[1] = 0;
           command = kb.nextLine();
+          command.toLowerCase();
           action[1] = Commands.basicCommands(command);
           if (action[1] == 0)
           {
@@ -77,6 +78,7 @@ public class Main
           }
           action[2] = 0;
           command = kb.nextLine();
+          command.toLowerCase();
           action[2] = Commands.basicCommands(command);
           if (action[2] == 0)
           {
@@ -153,6 +155,7 @@ public class Main
           }
           action[3] = 0;
           command = kb.nextLine();
+          command.toLowerCase();
           action[3] = Commands.basicCommands(command);
           if (action[3] == 0)
           {
@@ -168,6 +171,7 @@ public class Main
               System.out.println("Do you say YES or NO?");
               Commands.clearScreen(4);
               command = kb.nextLine();
+              command.toLowerCase();
               if (command.equals("yes"))
               {
                 System.out.println("The man smiles and commends you on your choice.");
@@ -182,7 +186,7 @@ public class Main
               }
               else if (command.equals("no"))
               {
-                System.out.println("The man looks dissapointed. 'Too bad' he mutters.");
+                System.out.println("The man looks disappointed. 'Too bad' he mutters.");
                 System.out.println("He raises his hand and the door shuts behind you.");
                 System.out.println("'That really is too bad.'");
                 System.out.println("You die in the most horrible way imaginable. GAME OVER.");
