@@ -25,7 +25,7 @@ public class Main
       {
         action[i] = 0;
       }
-      boolean bcommand = false;
+      boolean bcommand = true;
       boolean greenkey = false;
       boolean redkey = false;
       boolean sword = false;
@@ -43,7 +43,7 @@ public class Main
           }
           action[1] = 0;
           command = kb.nextLine();
-          bcommand = true;
+          bcommand = false;
           bcommand = Commands.basicCommands(command);
           action[1] = Commands.Room1(command);
           if (action[1] == 2)
@@ -68,7 +68,7 @@ public class Main
           }
           action[2] = 0;
           command = kb.nextLine();
-          bcommand = true;
+          bcommand = false;
           bcommand = Commands.basicCommands(command);
           action[2] = Commands.Room2(command);
           if (action[2] == 2)
