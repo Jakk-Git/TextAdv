@@ -193,7 +193,7 @@ public class Main
             else
             {
               System.out.println("The man refuses to speak to you any more.");
-              Commands.clearScreen(4);
+              Commands.clearScreen(1);
             }
           }
           else if (action[3] == 3)
