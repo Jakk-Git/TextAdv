@@ -134,6 +134,32 @@ public class Main
           start = false;
         }
         action[2] = 0;
+        while (room == 3)
+        {
+          if (action[3] == 0)
+          {
+            System.out.println("You are in Room 3. You see a MAN in odd looking garb standing");
+            System.out.println("in the corner. There is a FLASK on a nearby shelf.");
+            Commands.clearScreen(2);
+          }
+          action[3] = 0;
+          command = kb.nextLine();
+          action[3] = Commands.basicCommands(command);
+          if (action[3] == 0)
+          {
+            action[3] = Commands.Room1(command);
+          }
+          if (action[3] == 2)
+          {
+            
+          else if (action[1] == 0 && start == false)
+          {
+            System.out.print("I cannot recognise that command.");
+            action[1] = 1;
+          }
+          start = false;
+        }
+        action[3] = 0;
       }
     }
   }
