@@ -43,7 +43,7 @@ public class Main
           }
           action[1] = 0;
           command = kb.nextLine();
-          bcommand = false;
+          bcommand = true;
           bcommand = Commands.basicCommands(command);
           action[1] = Commands.Room1(command);
           if (action[1] == 2)
@@ -68,7 +68,7 @@ public class Main
           }
           action[2] = 0;
           command = kb.nextLine();
-          bcommand = false;
+          bcommand = true;
           bcommand = Commands.basicCommands(command);
           action[2] = Commands.Room2(command);
           if (action[2] == 2)
