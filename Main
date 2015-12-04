@@ -212,6 +212,42 @@ public class Main
           start = false;
         }
         action[3] = 0;
+        start = true;
+        //ROOM 4
+        while (room == 4)
+        {
+          if (action[4] == 0)
+          {
+            System.out.println("You have entered Room 4. There is a large staircase in the");
+            System.out.println("north end of the room. The room smells faintly of something foul.");
+            Commands.clearScreen(2);
+          }
+          action[4] = 0;
+          command = kb.nextLine();
+          command.toLowerCase();
+          action[4] = Commands.basicCommands(command);
+          if (action[4] == 0)
+          {
+            action[4] = Commands.Room4(command);
+          }
+          if (action[4] == 2)
+          {
+            room = 5;
+          }
+          if (action[4] == 3)
+          {
+            room = 2;
+          }
+          else if (action[4] == 0 && start == false)
+          {
+            System.out.print("I cannot recognise that command.");
+            action[4] = 1;
+            Commands.clearScreen(1);
+          }
+          start = false;
+        }
+        action[4] = 0;
+        start = true;
       }
     }
   }
