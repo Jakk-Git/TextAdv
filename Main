@@ -207,7 +207,7 @@ public class Main
           else if (action[3] == 0 && start == false)
           {
             System.out.print("I cannot recognise that command.");
-            action[1] = 1;
+            action[3] = 1;
           }
           start = false;
         }
