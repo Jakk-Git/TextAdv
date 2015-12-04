@@ -72,7 +72,7 @@ public class Main
           {
             System.out.println("You have entered Room 2.");
             System.out.println("There is a red chest against the north wall in the corner,");
-            System.out.println("a closed door on the west wall, and open doors on the south");
+            System.out.println("a green with a lock on the west wall, and open doors on the south");
             System.out.println("and east walls.");
             Commands.clearScreen(4);
           }
