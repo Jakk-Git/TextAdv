@@ -184,16 +184,15 @@ public class Commands
   {
     if (command.equals("look"))
     {
-      System.out.println("There is a large staircase in the north end of the room");
-      System.out.println("and an open door to the east. The room smells faintly of something foul.");
+      System.out.println("There is a large staircase in the north end of the room and an open door");
+      System.out.println("to the east. The room smells faintly of something foul.");
       clearScreen(2);
       return 1;
     }
     else if (command.equals("look staircase"))
     {
-      System.out.println("The staircase is old and decayed, but still looks");
-      System.out.println("sturdy enough to climb.");
-      clearScreen(2);
+      System.out.println("The staircase is old and decayed, but still looks sturdy enough to climb.");
+      clearScreen(1);
       return 1;
     }
     else if (command.equals("go north") || command.equals("climb staircase"))
