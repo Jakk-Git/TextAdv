@@ -86,7 +86,7 @@ public class Commands
     if (command.equals("look"))
     {
       System.out.println("There is a red chest against the north wall in the corner,");
-      System.out.println("a closed green door on the west wall,");
+      System.out.println("a green door with a lock on the west wall,");
       System.out.println("and open doors on the south and east walls.");
       clearScreen(3);
       return 1;
