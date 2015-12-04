@@ -204,7 +204,7 @@ public class Main
           {
             room = 2;
           }
-          else if (action[1] == 0 && start == false)
+          else if (action[3] == 0 && start == false)
           {
             System.out.print("I cannot recognise that command.");
             action[1] = 1;
