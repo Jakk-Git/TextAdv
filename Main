@@ -166,8 +166,8 @@ public class Main
             if (wiztalk == false)
             {
               System.out.println("The man looks at you with a condescending gaze.");
-              System.out.println("He offers you a key he found lying around somewhere in");
-              System.out.println("exchange for allowing him to cast a spell on you.");
+              System.out.println("He offers you a key he found lying around somewhere in exchange");
+              System.out.println("for allowing him to cast a spell on you.");
               System.out.println("Do you say YES or NO?");
               Commands.clearScreen(4);
               command = kb.nextLine();
@@ -176,9 +176,9 @@ public class Main
               {
                 System.out.println("The man smiles and commends you on your choice.");
                 System.out.println("He then raises his hands and starts mumbling incomprehensible");
-                System.out.println("gibberish. Light starts to emit from his palms. You feel a");
-                System.out.println("cold feeling wash over you. After about a minute, the man lowers");
-                System.out.println("his hands and thanks you for your time. He reaches into his");
+                System.out.println("gibberish. Light starts to emit from his palms. You feel a cold");
+                System.out.println("feeling wash over you. After about a minute, the man lowers his");
+                System.out.println("hands and thanks you for your time. He reaches into his pocket");
                 System.out.println("and hands you a RED KEY.");
                 Commands.clearScreen(6);
                 wiztalk = true;
