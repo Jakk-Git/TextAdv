@@ -257,4 +257,53 @@ public class Commands
       return 0;
     }
   }
+  public static int Room5(String command)
+  {
+    if (command.equals("look"))
+    {
+      System.out.println("A MAN stands at the north end of the room. Behind him is");
+      System.out.println("the exit to the dungeon. At the south end of the room is a");
+      System.out.println("doorway barred by a fallen gate.");
+      clearScreen(3);
+      return 1;
+    }
+    else if (command.equals("look man"))
+    {
+      System.out.println("This man is undoubtably a wizard.");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("look exit"))
+    {
+      System.out.println("Its so close!");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("go north"))
+    {
+      System.out.println("As you put your foot in the doorway, you are blasted across the room.");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("go south"))
+    {
+      System.out.println("The fallen gate blocks your path!");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("go west") || command.equals("go east"))
+    {
+      System.out.println("You cannot go that way!");
+      clearScreen(1);
+      return 1;
+    }
+    else if (command.equals("talk man"))
+    {
+      return 2;
+    }
+    else
+    {
+      return 0;
+    }
+  }
 }
