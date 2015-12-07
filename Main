@@ -340,7 +340,7 @@ public class Main
               System.out.println("do you intend to attack? (say back to stop your attack)");
               Commands.clearScreen(2);
               command = kb.nextLine;
-              command.toLowerCase;
+              command.toLowerCase();
               if (command == dorgus)
               {
                 System.out.println("Your sword bounces off it's hard shell!");
