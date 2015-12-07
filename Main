@@ -339,9 +339,9 @@ public class Main
               System.out.println("You whip out your newly-aquired sword! Which monster");
               System.out.println("do you intend to attack? (say back to stop your attack)");
               Commands.clearScreen(2);
-              command = kb.nextLine;
+              command = kb.nextLine();
               command.toLowerCase();
-              if (command == dorgus)
+              if (command.equals(dorgus))
               {
                 System.out.println("Your sword bounces off it's hard shell!");
                 System.out.println("The monsters use this oppurtunity to attack!");
@@ -349,7 +349,7 @@ public class Main
                 Commands.clearScreen(3);
                 System.exit(1);
               }
-              else if (command == hegril)
+              else if (command.equals(hegril))
               {
                 System.out.println("It swoops about too quickly for you to hit it!");
                 System.out.println("The monsters use this oppurtunity to attack!");
@@ -357,7 +357,7 @@ public class Main
                 Commands.clearScreen(3);
                 System.exit(1);
               }
-              else if (command == tudbos)
+              else if (command.equals(tudbos))
               {
                 System.out.println("You slice the tudbos in half with one mighty swing!");
                 System.out.println("The other monsters become frightened and skuttle off");
