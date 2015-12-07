@@ -6,7 +6,7 @@ public class Main
     Scanner kb = new Scanner(System.in);
     System.out.println("You are stuck on the top floor of a Dungeon and you need to escape without");
     System.out.println("dying.");
-    System.out.println("Type HELP for a list of commands.");
+    System.out.println("Once your in the game, type HELP for a list of commands.");
     System.out.println("If you would like to begin, type 1. If not enter 0.");
     Commands.clearScreen(4);
     int play = kb.nextInt();
@@ -27,6 +27,7 @@ public class Main
       }
       boolean start = true;
       boolean wiztalk = false;
+      boolean mondead = false;
       boolean greenkey = false;
       boolean redkey = false;
       boolean sword = false;
@@ -248,7 +249,147 @@ public class Main
         }
         action[4] = 0;
         start = true;
-      }
+        //ROOM 5
+        while (room == 5)
+        {
+          if (action[5] == 0)
+          {
+            System.out.println("When you arrive at the top of the stairs, you hear a noise");
+            System.out.println("coming from behind you. You turn around to look at it. Just");
+            System.out.println("as you do, debris falls from the ceiling! The staircase has");
+            System.out.println("been demolished! As you are recovering, you hear another noise");
+            System.out.println("coming from behind you. A foul smell assaults your nostrils.");
+            System.out.println("Three monsters have appeared in the room! A gut-wrenching DORGUS,");
+            System.out.println("a rot-toting HEGRIL, and a stink-smelling TUDBOS. They are waiting");
+            System.out.println("for an oppurtunity to attack! What do you do?");
+            Commands.clearScreen(8);
+          }
+          action[5] = 0;
+          command = kb.nextLine();
+          command.toLowerCase();
+          action[5] = Commands.basicCommands(command);
+          if (action[5] == 0)
+          {
+            action[5] = Commands.Room5(command);
+          }
+          if (action[5] == 2)
+          {
+            if (mondead == true)
+            {
+              System.out.println("Bones and rot are scattered over the floor of the room.");
+              System.out.println("There is an doorway without a door to the north, and a");
+              System.out.println("broken staircase to the south.");
+              Commands.clearScreen(3);
+            }
+            else
+            {
+              System.out.println("A DORGUS, a HEGRIL, and a TUDBOS are writhing about in the");
+              System.out.println("center of the room. You think you can see a doorway behind them.");
+              Commands.clearScreen(2);
+            }
+          }
+          else if (action[5] == 3)
+          {
+            if (mondead == true)
+            {
+              System.out.println("There are no longer any dorgus in this room.");
+              Commands.clearScreen(1);
+            }
+            else
+            {
+              System.out.println("This beast has a heavy shell that encircles most of its body.");
+              Commands.clearScreen(1);
+            }
+          }
+          else if (action[5] == 4)
+          {
+            if (mondead == true)
+            {
+              System.out.println("There are no longer any hegril in this room.");
+              Commands.clearScreen(1);
+            }
+            else
+            {
+              System.out.println("This agile beast flies through the air with ease.");
+              Commands.clearScreen(1);
+            }
+          }
+          else if (action[5] == 5)
+          {
+            if (mondead == true)
+            {
+              System.out.println("It lies dead in the center of the room.");
+              Commands.clearScreen(1);
+            }
+            else
+            {
+              System.out.println("A slow-moving blobular creature with thin skin.");
+              Commands.clearScreen(1);
+            }
+          }
+          else if (action[5] == 6)
+          {
+            if (mondead == true)
+            {
+              System.out.println("There isn't anything to use your sword on.");
+              Commands.clearScreen(1);
+            }
+            else
+            {
+              System.out.println("You whip out your newly-aquired sword! Which monster");
+              System.out.println("do you intend to attack? (say back to stop your attack)");
+              Commands.clearScreen(2);
+              command = kb.nextLine;
+              command.toLowerCase;
+              if (command == dorgus)
+              {
+                System.out.println("Your sword bounces off it's hard shell!");
+                System.out.println("The monsters use this oppurtunity to attack!");
+                System.out.println("You have died, GAME OVER.");
+                Commands.clearScreen(3);
+                System.exit(1);
+              }
+              else if (command == hegril)
+              {
+                System.out.println("It swoops about too quickly for you to hit it!");
+                System.out.println("The monsters use this oppurtunity to attack!");
+                System.out.println("You have died, GAME OVER.");
+                Commands.clearScreen(3);
+                System.exit(1);
+              }
+              else if (command == tudbos)
+              {
+                System.out.println("You slice the tudbos in half with one mighty swing!");
+                System.out.println("The other monsters become frightened and skuttle off");
+                System.out.println("towards the broken staircase.");
+                Commands.clearScreen(3);
+                mondead = true;
+              }
+            }
+          }
+          else if (action[5] == 7)
+          {
+            if (mondead == true)
+            {
+              room = 6;
+            }
+            else
+            {
+              System.out.println("You cannot get past the monsters!");
+              Commands.clearScreen(1);
+            }
+          }
+          else if (action[5] == 0 && start == false)
+          {
+            System.out.print("I cannot recognise that command.");
+            action[5] = 1;
+            Commands.clearScreen(1);
+          }
+          start = false;
+        }
+        action[5] = 0;
+        start = true;
+        //ROOM 6
     }
   }
 }
