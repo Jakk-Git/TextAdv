@@ -257,7 +257,7 @@ public class Commands
       return 0;
     }
   }
-  public static int Room5(String command)
+  public static int Room6(String command)
   {
     if (command.equals("look"))
     {
