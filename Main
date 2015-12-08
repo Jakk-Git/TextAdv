@@ -40,7 +40,7 @@ public class Main
         {
           if (action[1] == 0)
           {
-            System.out.println("You have entered Room 1. There is NOTHING in this room.");
+            System.out.println("There is NOTHING in this room.");
             System.out.println("There is an open DOOR on the west wall.");
             Commands.clearScreen(2);
           }
@@ -71,11 +71,10 @@ public class Main
         {
           if (action[2] == 0)
           {
-            System.out.println("You have entered Room 2.");
             System.out.println("There is a red chest against the north wall in the corner,");
             System.out.println("a green with a lock on the west wall, and open doors on the south");
             System.out.println("and east walls.");
-            Commands.clearScreen(4);
+            Commands.clearScreen(3);
           }
           action[2] = 0;
           command = kb.nextLine();
@@ -87,7 +86,12 @@ public class Main
           }
           if (action[2] == 2)
           {
-            if (redkey == true)
+            if (greenkey == true)
+            {
+              System.out.println("The chest is empty!");
+              Commands.clearScreen(1);
+            }
+            else if (redkey == true)
             {
               System.out.println("You have opened the chest! Inside is a sword and a green key.");
               System.out.println("You have obtained a SWORD and a GREEN KEY");
@@ -150,8 +154,8 @@ public class Main
         {
           if (action[3] == 0)
           {
-            System.out.println("You have entered Room 3. You see a MAN in odd looking garb standing");
-            System.out.println("in the corner. There is a FLASK on a nearby shelf.");
+            System.out.println("You see a MAN in odd looking garb standing int the corner.");
+            System.out.println("There is a FLASK on a nearby shelf.");
             Commands.clearScreen(2);
           }
           action[3] = 0;
@@ -219,8 +223,8 @@ public class Main
         {
           if (action[4] == 0)
           {
-            System.out.println("You have entered Room 4. There is a large staircase in the");
-            System.out.println("north end of the room. The room smells faintly of something foul.");
+            System.out.println("There is a large staircase in the north end of the room.");
+            System.out.println("The room smells faintly of something foul.");
             Commands.clearScreen(2);
           }
           action[4] = 0;
@@ -254,15 +258,14 @@ public class Main
         {
           if (action[5] == 0)
           {
-            System.out.println("When you arrive at the top of the stairs, you hear a noise");
-            System.out.println("coming from behind you. You turn around to look at it. Just");
-            System.out.println("as you do, debris falls from the ceiling! The staircase has");
-            System.out.println("been demolished! As you are recovering, you hear another noise");
-            System.out.println("coming from behind you. A foul smell assaults your nostrils.");
-            System.out.println("Three monsters have appeared in the room! A gut-wrenching DORGUS,");
-            System.out.println("a rot-toting HEGRIL, and a stink-smelling TUDBOS. They are waiting");
-            System.out.println("for an oppurtunity to attack! What do you do?");
-            Commands.clearScreen(8);
+            System.out.println("When you arrive at the top of the stairs, you hear a noise coming from");
+            System.out.println("behind you. You turn around to look at it. Just as you do, debris falls");
+            System.out.println("falls from the ceiling! The staircase has been demolished! As you are");
+            System.out.println("recovering, you hear another noise coming from behind you. A foul smell");
+            System.out.println("assaults your nostrils. Three monsters have appeared in the room!");
+            System.out.println("A gut-wrenching DORGUS, a rot-toting HEGRIL, and a stink-smelling TUDBOS.");
+            System.out.println("They are waiting for an oppurtunity to attack! What do you do?");
+            Commands.clearScreen(7);
           }
           action[5] = 0;
           command = kb.nextLine();
@@ -390,6 +393,44 @@ public class Main
         action[5] = 0;
         start = true;
         //ROOM 6
+        while (room == 6)
+        {
+          if (action[6] == 0)
+          {
+            System.out.println("When you enter the room, a gate drops behind you.");
+            System.out.println("'Hello!' says a man near the north side of the room.");
+            System.out.println("You immidiately recognise him as the man who cast a spell");
+            System.out.println("on you earlier. 'The exit is right behind me!'");
+            System.out.println("'Go ahead! You're free to go!'");
+            System.out.println("You suspiciously head towards the exit. You see light filtering");
+            System.out.println("in from behind the man. As you put your foot in the doorway,");
+            System.out.println("you are blasted across the room. You lay on the floor in shock.");
+            System.out.println("'-IF you answer my riddle. Unless I remove the spell I casted on");
+            System.out.println("you earlier, you aren't going to be leaving this dungeon. Ever.'");
+            Commands.clearScreen(10);
+          }
+          action[6] = 0;
+          command = kb.nextLine();
+          command.toLowerCase();
+          action[6] = Commands.basicCommands(command);
+          if (action[6] == 0)
+          {
+            action[6] = Commands.Room6(command);
+          }
+          if (action[6] == 2)
+          {
+            System.out.println("'Want to have a go at my riddle eh? Prepare yourself, then!'");
+            System.out.println("'What ends everything?'");
+            
+          }
+          else if (action[6] == 0 && start == false)
+          {
+            System.out.print("I cannot recognise that command.");
+            action[6] = 1;
+            Commands.clearScreen(1);
+          }
+          start = false;
+        }
       }
     }
   }
